@@ -96,6 +96,40 @@ body {
   display: block;
 }
 
+.task:after {
+  content: attr(data-start-time) "~" attr(data-end-time);
+  background-color: #d3d7cf;
+  position: absolute;
+  right : -220px;
+  width: 150px;
+  box-shadow: 3px 3px 3px #555753;
+  border-radius: 6px;
+  text-align: center;
+  display: none;
+}
+
+.task:before {
+  content: "";
+  position: absolute;
+  right: -70px;
+  top: 50%;
+  margin-top: -20px;
+  height: 0;
+  width: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid #d3d7cf;
+  z-index: 10;
+  display: none;
+}
+
+.task:hover:after {
+  display: inline;
+}
+
+.task:hover:before {
+  display: inline;
+}
 .delTask {
   height: 30px;
   width: 30px;

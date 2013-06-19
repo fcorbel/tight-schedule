@@ -51,6 +51,10 @@ function createTask(text, startH, startM, duration, hourLenth, type) {
   taskHtml.setAttribute("class", "task " + type);
   taskHtml.setAttribute("data-start", startM);
   taskHtml.setAttribute("data-duration", duration);
+  taskHtml.setAttribute("data-start-time", startH + "h" + startM);
+  var endTimeH = Math.floor((parseInt(startM, 10) + parseInt(duration, 10)) / 60) + parseInt(startH, 10);
+  var endTimeM = (parseInt(startM, 10) + parseInt(duration, 10)) - ((endTimeH - startH) * 60);
+  taskHtml.setAttribute("data-end-time", endTimeH + "h" + endTimeM);
   taskHtml.innerHTML = text;
   taskHtml.appendChild(delBtn);
   adjustTaskSize(taskHtml, hourLenth);
@@ -202,6 +206,8 @@ window.onload = function() {
       overlay.style.visibility = "visible";
       taskDialogOpened = true;
       setDialDefault("your task", hourSelected, minuteSelected, durationSelected);
+      document.getElementById("addNewTask").focus();
+      
     }
     //reset end of indicator line
     indicatorLine.style.height = "1px";
