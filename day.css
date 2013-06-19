@@ -1,0 +1,266 @@
+body {
+  background-color: #eeeeec;
+  color: #2e3436;
+  padding: 10px;
+}
+
+#calTitle {
+  text-align: center;
+  font-size: 4em;
+  line-height: 80px;
+  padding: 0;
+  margin: 0;
+}
+
+#calTitle:hover {
+  cursor: pointer;
+}
+
+#titleModif {
+  display: none;
+  text-align: center;
+  height: 80px;
+  line-height: 80px;
+  vertical-align: middle;
+}
+
+#titleModif input {
+  height: 40px;
+  width: 300px;
+}
+
+#changeTitle {
+  height: 40px;
+}
+
+#calendar {
+  width: 800px;
+  margin: 0 auto;
+}
+
+#day {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  border: 1px solid #2e3436;
+  position: relative;
+}
+
+#day li {
+  border-bottom: 1px solid #2e3436; 
+  height: 100px;
+  position: relative;
+}
+
+#day li:before {
+  content: attr(data-hour);
+  position: absolute;
+  left: -100px;
+  font-size: 4em;
+  height: 100px;
+  line-height: 100px;
+  vertical-align: middle;
+  border-top: 1px solid #888a85;
+  border-bottom: 1px solid #888a85;
+}
+
+#day li:after {
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: #babdb6;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 0;
+}
+
+#day li:last-child {
+  border-bottom: none;  
+}
+
+.task {
+  position: absolute;
+  width: 640px;
+  margin: 0 50px;
+  z-index: 5;
+  padding: 0 30px;
+  font-size: 1.2em;
+}
+
+.task:hover {
+  border: 1px solid black;
+}
+
+.task:hover .delTask {
+  display: block;
+}
+
+.task:after {
+  content: attr(data-start-time) "~" attr(data-end-time);
+  background-color: #d3d7cf;
+  position: absolute;
+  right : -220px;
+  width: 150px;
+  box-shadow: 3px 3px 3px #555753;
+  border-radius: 6px;
+  text-align: center;
+  display: none;
+}
+
+.task:before {
+  content: "";
+  position: absolute;
+  right: -70px;
+  top: 50%;
+  margin-top: -20px;
+  height: 0;
+  width: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid #d3d7cf;
+  z-index: 10;
+  display: none;
+}
+
+.task:hover:after {
+  display: inline;
+}
+
+.task:hover:before {
+  display: inline;
+}
+.delTask {
+  height: 30px;
+  width: 30px;
+  background-color: red;
+  position: absolute;
+  right: -30px;
+  top: 0;
+  display: none;
+  font-size: 1.5em;
+  line-height: 30px;
+  text-align: center;
+  background-color: #2e3436;
+  color: #babdb6;
+}
+
+.delTask:hover {
+  cursor: pointer;
+}
+
+/*Colour palette for the tasks*/
+
+#colorPalette {
+  position: fixed;
+  left: 30px;
+  top: 100px;
+  padding: 0;
+  margin: 0;
+  width: 120px;
+}
+
+#colorPalette li {
+  margin: 10px 0;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  height: 30px;
+  line-height: 30px;
+ 
+}
+
+.taskCol {
+  float: right;
+  height: 30px;
+  width: 30px;
+}
+
+.workCol {
+  background-color: #3465a4;
+  background-image: linear-gradient(to bottom, #729fcf, #3465a4 90%, #204a87);  
+}
+
+.hobbyCol {
+  background-color: #f57900;
+  background-image: linear-gradient(to bottom, #fcaf3e, #f57900 90%, #ce5c00);  
+}
+
+.healthCol {
+  background-color: #73d216;
+  background-image: linear-gradient(to bottom, #8ae234, #73d216 90%, #4e9a06);  
+}
+
+.freeCol {
+  background-color: #75507b;
+  background-image: linear-gradient(to bottom, #ad7fa8, #75507b 90%, #5c3566);  
+}
+
+
+
+/*Create new task window*/
+#overlay {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+#createTaskWin {
+  background-color: #eeeeec;
+  border: 3px solid #555753;
+  width: 300px;
+  margin: 100px auto;
+  text-align: left;
+  padding: 10px;
+  padding-bottom: 40px;
+  position: relative;
+}
+
+#duration {
+  width: 40px;
+}
+
+#okCancBtn {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+#indicatorLine {
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  top: 0;
+  background-color: #ef2929;
+  background-color: rgba(239, 41, 41, .5);
+  border-top: 1px solid #a40000;
+  border-bottom: 1px solid #a40000;
+  z-index: 1;
+}
+
+#indicatorLine:before {
+  content: attr(data-time);
+  position: absolute;
+  width: 50px;
+  right: -50px;
+  top: 0;
+  background-color: #cc0000;
+}
+
+#indicatorLine:after {
+  content: attr(data-timeEnd);
+  position: absolute;
+  width: 50px;
+  right: -50px;
+  bottom: 0;
+  background-color: #cc0000;
+}
+
+
+
