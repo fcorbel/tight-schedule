@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>Lundi</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="normalize.css">
@@ -12,24 +12,24 @@
 
     <button id="showDialBtn">Add new task</button>
     <section id="calendar">
-      <h1 id="calTitle">Lundi</h1>
-      <div id="titleModif">
-        <input type="text">
+      <h1 style="display: block;" id="calTitle">Monday</h1>
+      <div style="display: none;" id="titleModif">
+        <input value="Monday" type="text">
         <button id="changeTitle">Ok</button>
       </div>
       <ol id="day">
-        <li data-hour="0"></li>
-        <li data-hour="1"></li>
-        <li data-hour="2"></li>
-        <li data-hour="3"></li>
+        <li data-hour="0"><div style="height: 101px; line-height: 101px; top: 50px;" data-end-time="1h30" data-start-time="0h30" data-duration="60" data-start="30" class="task workCol">This page let's you build your schedule<div class="delTask">X</div></div></li>
+        <li data-hour="1"><div style="height: 51px; line-height: 51px; top: 50px;" data-end-time="2h0" data-start-time="1h30" data-duration="30" data-start="30" class="task workCol">It's build in html/css/javascript<div class="delTask">X</div></div></li>
+        <li data-hour="2"><div style="height: 58.3333px; line-height: 58.3333px; top: 0px;" data-end-time="2h35" data-start-time="2h0" data-duration="35" data-start="0" class="task healthCol">Drag and drop to create a new task<div class="delTask">X</div></div><div style="height: 51px; line-height: 51px; top: 58.3333px;" data-end-time="3h5" data-start-time="2h35" data-duration="30" data-start="35" class="task workCol">You can create any task you want<div class="delTask">X</div></div></li>
+        <li data-hour="3"><div style="height: 386.333px; line-height: 386.333px; top: 8.33333px;" data-end-time="6h55" data-start-time="3h5" data-duration="230" data-start="5" class="task freeCol">Sleep<div class="delTask">X</div></div></li>
         <li data-hour="4"></li>
         <li data-hour="5"></li>
-        <li data-hour="6"></li>
-        <li data-hour="7"></li>
-        <li data-hour="8"></li>
-        <li data-hour="9"></li>
-        <li data-hour="10"></li>
-        <li data-hour="11"></li>
+        <li data-hour="6"><div style="height: 42.6667px; line-height: 42.6667px; top: 91.6667px;" data-end-time="7h20" data-start-time="6h55" data-duration="25" data-start="55" class="task healthCol">Delete a task: click on the cross on the right side<div class="delTask">X</div></div></li>
+        <li data-hour="7"><div style="height: 67.6667px; line-height: 67.6667px; top: 33.3333px;" data-end-time="8h0" data-start-time="7h20" data-duration="40" data-start="20" class="task hobbyCol">You can edit the title by clicking on it<div class="delTask">X</div></div></li>
+        <li data-hour="8"><div style="height: 101px; line-height: 101px; top: 0px;" data-end-time="9h0" data-start-time="8h0" data-duration="60" data-start="0" class="task workCol">The goal is to fill your schedule<div class="delTask">X</div></div></li>
+        <li data-hour="9"><div style="height: 75px; line-height: 75px; top: 0px;" data-end-time="9h45" data-start-time="9h0" data-duration="45" data-start="0" class="task socialCol">This was inspired by a character form a novel<div class="delTask">X</div></div><div style="height: 51px; line-height: 51px; top: 75px;" data-end-time="10h15" data-start-time="9h45" data-duration="30" data-start="45" class="task socialCol">"Confessions" by Rousseau<div class="delTask">X</div></div></li>
+        <li data-hour="10"><div style="height: 76px; line-height: 76px; top: 25px;" data-end-time="11h0" data-start-time="10h15" data-duration="45" data-start="15" class="task hobbyCol">A brilliant man who filled every minutes of his schedule<div class="delTask">X</div></div></li>
+        <li data-hour="11"><div style="height: 50px; line-height: 50px; top: 0px;" data-end-time="11h30" data-start-time="11h0" data-duration="30" data-start="0" class="task healthCol">He apparently died very young...<div class="delTask">X</div></div><div style="height: 101px; line-height: 101px; top: 50px;" data-end-time="12h30" data-start-time="11h30" data-duration="60" data-start="30" class="task workCol">Feel free to modify this page and save it<div class="delTask">X</div></div></li>
         <li data-hour="12"></li>
         <li data-hour="13"></li>
         <li data-hour="14"></li>
@@ -43,7 +43,7 @@
         <li data-hour="22"></li>
         <li data-hour="23"></li>
 
-      </ol>
+      <div style="top: 1001.58px; height: 1px;" data-timeend="12:30" data-time="9:55" id="indicatorLine"></div></ol>
       <ul id="colorPalette">
         <li><span>Work</span><div class="taskCol workCol"></div></li>
         <li><span>Hobby</span><div class="taskCol hobbyCol"></div></li>
@@ -52,10 +52,10 @@
         <li><span>Social</span><div class="taskCol socialCol"></div></li>
       </ul>
     </section>
-    <div id="overlay">
+    <div style="visibility: hidden;" id="overlay">
       <section id="createTaskWin">
         <label for="description">What's your task:</label>
-        <input type="text" id="description">
+        <input value="Feel free to modify this page and save it" id="description" type="text">
         <fieldset>
           <legend>When</legend>
           <label>Starting time:</label>
@@ -71,7 +71,7 @@
             <option value="8">8</option>
             <option value="9">9</option>
             <option value="10">10</option>
-            <option value="11">11</option>
+            <option selected="selected" value="11">11</option>
             <option value="12">12</option>
             <option value="13">13</option>
             <option value="14">14</option>
@@ -92,26 +92,27 @@
             <option value="15">15</option>
             <option value="20">20</option>
             <option value="25">25</option>
-            <option value="30">30</option>
+            <option selected="selected" value="30">30</option>
             <option value="35">35</option>
             <option value="40">40</option>
             <option value="45">45</option>
             <option value="50">50</option>
             <option value="55">55</option>
           </select>min
-          <br />
+          <br>
           <label for="duration">Duration:</label>
-          <input type="number" id="duration">min
+          <input value="60" id="duration" type="number">min
         </fieldset>
         <label for="">Type:</label>
         <select id="taskType">
-        </select>
-        <br />
+        <option selected="selected" value="workCol">Work</option><option value="hobbyCol">Hobby</option><option value="healthCol">Health</option><option value="freeCol">Free</option><option value="socialCol">Social</option></select>
+        <br>
         <div id="okCancBtn">
           <button id="cancel">Cancel</button>
           <button id="addNewTask">Add</button>
         </div>
       </section>
     </div>
-  </body>
-</html>
+  
+
+</body></html>
