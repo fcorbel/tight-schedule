@@ -195,6 +195,10 @@ body {
   background-image: linear-gradient(to bottom, #ad7fa8, #75507b 90%, #5c3566);  
 }
 
+.socialCol {
+  background-color: #edd400;
+  background-image: linear-gradient(to bottom, #fce94f, #edd400 90%, #c4a000);  
+}
 
 
 /*Create new task window*/

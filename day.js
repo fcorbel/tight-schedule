@@ -67,11 +67,17 @@ function adjustTaskSize(elem, hourLenth) {
     //to correct the border size
     var borders = Math.floor(duration / 60);
     var taskSize = (duration * hourLenth) / 60 + borders;
+    //to correct case of tasks less than an hour but overlaps a border
+    var startMin = elem.getAttribute("data-start");
+    if (duration < 60) {
+      if ((startMin + duration) >= 60) {
+        taskSize += 1;
+      } 
+    }
     taskSize += "px";
     elem.style.height = taskSize;
     elem.style.lineHeight = taskSize;
     //set start of the task
-    var startMin = elem.getAttribute("data-start");
     var taskStart = (startMin * hourLenth) / 60;
     taskStart += "px";
     elem.style.top = taskStart;
